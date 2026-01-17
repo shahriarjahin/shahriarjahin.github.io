@@ -757,6 +757,94 @@ h1, h2, h3, h4 {
     margin-bottom: 0.8rem;
     color: var(--neon-teal);
 }
+/*===== Photo gallery====*/
+/* ===== EXTENSION PHOTO GRID ===== */
+#extension-gallery {
+    padding: 5rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.gallery-subtitle {
+    max-width: 750px;
+    margin: 0 auto 3rem;
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.extension-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.extension-card {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(10px);
+    transition: all var(--transition-speed) ease;
+}
+
+.extension-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(10, 249, 250, 0.15),
+        transparent
+    );
+    opacity: 0;
+    transition: opacity var(--transition-speed) ease;
+    z-index: 1;
+}
+
+.extension-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.extension-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0.9rem 1.2rem;
+    font-size: 0.9rem;
+    background: linear-gradient(
+        to top,
+        rgba(5, 5, 16, 0.9),
+        rgba(5, 5, 16, 0.4),
+        transparent
+    );
+    color: var(--text-primary);
+    z-index: 2;
+    border-top: 1px solid rgba(10, 249, 250, 0.2);
+}
+
+.extension-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(10, 249, 250, 0.25);
+    border-color: var(--neon-teal);
+}
+
+.extension-card:hover img {
+    transform: scale(1.08);
+}
+
+.extension-card:hover::before {
+    opacity: 1;
+}
 
 /* ===== EDUCATION SECTION ===== */
 #education {
