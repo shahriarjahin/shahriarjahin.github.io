@@ -617,35 +617,156 @@ body.light-mode .profile-img {
 }
 
 /* ==========================================================================
-   Media Queries
+   Mobile Menu Button (Hidden on Desktop)
    ========================================================================== */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color var(--transition);
+}
+
+.menu-toggle:hover {
+    color: var(--accent);
+}
+/* ==========================================================================
+   Anti-Wobble Fix (Horizontal Scroll Lock)
+   ========================================================================== */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+    max-width: 100vw;
+}
+/* ==========================================================================
+   Responsive Media Queries
+   ========================================================================== */
+
+/* Tablet & Smaller Laptops */
 @media (max-width: 992px) {
-    .hero-content, .contact-container {
-        grid-template-columns: 1fr;
+    section {
+        padding: 100px 5%;
     }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+    }
+
+    .hero-description {
+        margin: 0 auto 2.5rem auto; /* Centers the description */
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
     .profile-container {
-        max-width: 400px;
+        max-width: 380px;
         margin: 0 auto;
     }
+
     .hero-widgets {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .about-content, 
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
     }
 }
 
+/* Mobile Devices */
 @media (max-width: 768px) {
+    section {
+        padding: 80px 5%;
+    }
+    
+    /* Mobile Navbar & Hamburger Menu */
+    .menu-toggle {
+        display: block; /* Show hamburger icon */
+    }
+    
     .nav-links {
-        display: none; /* Add JS class to toggle this on mobile */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(10, 10, 10, 0.98);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 0;
+        gap: 2rem;
+        border-bottom: 1px solid var(--border);
+        
+        /* Hidden state for animation */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
     }
+
+    /* Active state triggered by your existing scripts.js */
+    .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
     .hero-title {
-        font-size: 3rem;
+        font-size: clamp(2.5rem, 8vw, 3.5rem);
     }
-    .hero-widgets, .about-highlights {
+
+    .about-highlights {
         grid-template-columns: 1fr;
     }
-    .timeline {
-        padding-left: 1rem;
+
+    .skills-container {
+        grid-template-columns: 1fr;
     }
+
+    /* Adjust Timeline for Mobile */
+    .timeline {
+        padding-left: 1.5rem;
+        margin-left: 1rem; /* Pushes the whole timeline away from the left edge */
+    }
+    
+    .timeline-item {
+        padding-left: 0.5rem;
+    }
+
     .timeline-dot {
-        left: -1.35rem;
+        left: -1.8rem; /* Perfectly aligns the dot with the line */
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-widgets {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-social {
+        justify-content: center;
     }
 }
