@@ -48,18 +48,10 @@
 
 
 <body>
-    <!-- Particle Background -->
-    <div id="particles-js"></div>
-
-   <div class="extension-bg">
-    <span></span><span></span><span></span><span></span><span></span>
-</div>
-
-
     <!-- Navbar -->
     <nav class="navbar">
         <a href="https://smjahin.me" class="logo">
-            <span class="glitch" data-text="SMJ">SMJ</span>ahin
+            SMJahin
         </a>
         <ul class="nav-links" id="navLinks">
             <li><a href="#hero"><i class="fas fa-home"></i> <span>Home</span></a></li>
@@ -71,9 +63,7 @@
 
             <li><a href="#contact"><i class="fas fa-comment-dots"></i> <span>Contact</span></a></li>
         </ul>
-        <button class="dark-mode-toggle" id="darkModeToggle">
-            <i class="fas fa-moon"></i>
-        </button>
+        
         <button class="menu-toggle" id="menuToggle">
             <i class="fas fa-bars"></i>
         </button>
@@ -99,12 +89,27 @@
     sector-level decision making.
 </p>
 
+                <div class="hero-widgets">
+                    <div class="dashboard-card">
+                        <h3>Field Delivery</h3>
+                        <p>Practical extension, training, and field-level implementation across rural communities.</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3>Analysis & Reporting</h3>
+                        <p>Data-informed insights, survey reporting, and evidence-backed decision support.</p>
+                    </div>
+                    <div class="dashboard-card">
+                        <h3>Leadership</h3>
+                        <p>Project coordination, student society leadership, and collaborative program delivery.</p>
+                    </div>
+                </div>
+
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary btn-glow">
+                    <a href="#projects" class="btn btn-primary">
                         <span>View My Work</span>
                         <i class="fas fa-arrow-right"></i>
                     </a>
-                    <a href="#contact" class="btn btn-secondary btn-glow">
+                    <a href="#contact" class="btn btn-secondary">
                         <span>Get In Touch</span>
                         <i class="fas fa-paper-plane"></i>
                     </a>
@@ -112,10 +117,7 @@
             </div>
             <div class="hero-image">
                 <div class="profile-container">
-                    <div class="profile-bg"></div>
-                    <div class="profile-border"></div>
                     <img src="/imgs/me.png" alt="Shahriar Jahin" class="profile-img">
-                    <div class="profile-overlay"></div>
                 </div>
             </div>
         </div>
@@ -334,7 +336,7 @@
                     <div class="project-tags">
                         <span class="project-tag">JavaScript</span>
                         <span class="project-tag">HTML/CSS</span>
-                        <span class="project-tag">Googleservices</span>
+                        <span class="project-tag">Google Services</span>
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/SHAHRIARJAHIN/quiz-app" class="project-link"><i
@@ -345,6 +347,24 @@
                 </div>
             </div>
 
+            <div class="project-card">
+                <img src="https://opengraph.githubassets.com/1/shahriarjahin/nesco-dashboard" alt="NESCO Dashboard" class="project-image">
+                <div class="project-content">
+                    <h3 class="project-title">NESCO Dashboard</h3>
+                    <p class="project-description">
+                        A modern utility dashboard built for NESCO to visualize operational metrics, energy performance, and service delivery in a polished interface.
+                    </p>
+                    <div class="project-tags">
+                        <span class="project-tag">React</span>
+                        <span class="project-tag">Dashboard</span>
+                        <span class="project-tag">Data Visualization</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/shahriarjahin/nesco-dashboard" class="project-link"><i class="fab fa-github"></i></a>
+                        <a href="https://github.com/shahriarjahin/nesco-dashboard" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </section>
@@ -651,7 +671,7 @@
                             class="fab fa-facebook"></i></a>
 
                 </div>
-                <a href="/CV/ShahariarMorshedJahin_CV.pdf" class="btn btn-primary download-cv btn-glow">
+                <a href="/CV/ShahariarMorshedJahin_CV.pdf" class="btn btn-primary download-cv">
                     <i class="fas fa-download"></i> Download Resume
                 </a>
             </div>
@@ -669,7 +689,7 @@
                     <div class="form-group">
                         <textarea placeholder="Your Message" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-glow">Send Message</button>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
                 </form>
             </div>
         </div>
@@ -705,7 +725,6 @@
             });
         });
     </script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="scripts.js"></script>
 </body>
 

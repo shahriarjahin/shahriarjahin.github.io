@@ -7,46 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
     initSkillsAnimation();
     initDNAAnimation();
     initContactForm();
-    initParticles();
     initScrollAnimations();
 });
 
-// Initialize particle.js background
-function initParticles() {
-    if (typeof particlesJS !== 'undefined') {
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 80, density: { enable: true, value_area: 800 } },
-                color: { value: "#64ffda" },
-                shape: { type: "circle" },
-                opacity: { value: 0.5, random: true },
-                size: { value: 3, random: true },
-                line_linked: { 
-                    enable: true, 
-                    distance: 150, 
-                    color: "#64ffda", 
-                    opacity: 0.2, 
-                    width: 1 
-                },
-                move: { 
-                    enable: true, 
-                    speed: 2, 
-                    direction: "none", 
-                    random: true, 
-                    straight: false, 
-                    out_mode: "out" 
-                }
-            },
-            interactivity: {
-                detect_on: "canvas",
-                events: {
-                    onhover: { enable: true, mode: "repulse" },
-                    onclick: { enable: true, mode: "push" }
-                }
-            }
-        });
-    }
-}
+// No particle background in the new dashboard style.
 function initNavbarAnimation() {
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
