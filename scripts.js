@@ -241,33 +241,14 @@ function initDynamicCV() {
             </div>
         `;
 
-        // PDF Configuration options
-        const opt = {
-            margin:       0.4,
-            filename:     'Shahriar_Morshed_Jahin_CV.pdf',
-            image:        { type: 'jpeg', quality: 0.98 },
-            html2canvas:  { scale: 2, useCORS: true, logging: false }, // logging: false speeds it up
-            jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
-        };
-
-        // Generate the PDF directly from the HTML string
-        if (typeof html2pdf !== 'undefined') {
-            html2pdf().set(opt).from(cvHTML).save().then(() => {
-                cvBtn.innerHTML = '<i class="fas fa-check"></i> Download Complete';
-                setTimeout(() => {
-                    cvBtn.innerHTML = originalText;
-                    cvBtn.style.pointerEvents = 'auto';
-                }, 3000);
-            }).catch(err => {
-                console.error("PDF Generation Error: ", err);
-                alert("There was an issue generating the PDF. Please try again.");
-                cvBtn.innerHTML = originalText;
-                cvBtn.style.pointerEvents = 'auto';
-            });
-        } else {
-            alert("PDF Library is still loading or missing. Please refresh the page.");
-            cvBtn.innerHTML = originalText;
-            cvBtn.style.pointerEvents = 'auto';
-        }
+        const downloadCvBtn = document.getElementById("downloadCvBtn");
+if (downloadCvBtn) {
+    downloadCvBtn.addEventListener("click", function () {
+        const originalText = this.innerHTML;
+        this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Downloading...';
+        
+        setTimeout(() => {
+            this.innerHTML = originalText;
+        }, 2000);
     });
 }
